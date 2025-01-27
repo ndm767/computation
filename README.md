@@ -4,11 +4,12 @@
 
 General recursive functions, implementing the base functions as well as composition, primitive recursion, minimization.  
 Uses the `.grf` file extension  
+The first argument passed to the program must be the identifier of the function you wish to run and then next arguments must be the arguments passed to said function. For example, to run `g(x, y) = ...` passing in `x=1` and `y=2` , one would write `dune exec bin/main.exe path/to/file.grf g 1 2`  
 Syntax:  
 
 - `E(x)` is the erase function. It outputs the empty string.  
 - `P_i^n(x_1, x_2, ..., x_n)` is the projection function. It selects the `i`th element (1-indexed) out of `n` inputs.
-- `S_#c(x)` is the successor function where `c` is any symbol. The output of this will be `xc`.  
+- `S_#c(x)` is the successor function where `c` is any symbol. The output of this will be `xc`. For example: `S_#2("111") = 1112`  
 - `f(x, y, ...) := [body]` is a function definition. `f` may be any identifier as specified in the lexer.  
 - Composition works as expected (`f(g(x))`).  
 - Primitive recursion assumes that the recursive variable is the first argument. `f(n_y, x) := [base case when n = ""] | [otherwise]`. Note the `n_y` to denote that we are reducing `n`.

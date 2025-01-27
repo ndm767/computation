@@ -1,5 +1,7 @@
 # Models of computation
 
+Implementations of table and instruction Turing machines, register machines, Markov algorithms, and recursive functions over the natural numbers as interpreted programming languages written in OCaml. Based upon the material from Ma/CS 117a Computability at Caltech.
+
 ## general_recursive
 
 General recursive functions, implementing the base functions as well as composition, primitive recursion, minimization.  

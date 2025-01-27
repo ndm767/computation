@@ -1,0 +1,6 @@
+(ocamllex lexer)
+(menhir (modules parser) (flags --exn-carries-state ))
+
+(library
+ (name general_recursive)
+ (modules parser lexer functions model))

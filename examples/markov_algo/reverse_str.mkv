@@ -1,0 +1,12 @@
+var "s"
+var "t"
+special "a"
+special "B"
+
+"aa" -> "B"
+"B0" -> "0B"
+"B1" -> "1B"
+"Ba" -> "B"
+"B" ->t ""
+"ast" -> "tas"
+"" -> "a"

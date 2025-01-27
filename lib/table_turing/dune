@@ -1,0 +1,6 @@
+(ocamllex lexer)
+(menhir (modules parser))
+
+(library
+ (name table_turing)
+ (modules parser lexer table model))

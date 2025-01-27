@@ -1,0 +1,2 @@
+f(n_y, x) := S_#b(x) | S_#a(f(n, x))
+g(x) := min_z[f(z, x) = "1baaa"]

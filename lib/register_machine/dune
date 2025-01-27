@@ -1,0 +1,6 @@
+(ocamllex lexer)
+(menhir (modules parser))
+
+(library
+ (name register_machine)
+ (modules parser lexer instruction model))

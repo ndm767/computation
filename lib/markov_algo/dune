@@ -1,0 +1,7 @@
+(ocamllex lexer)
+(menhir (modules parser))
+
+(library
+ (name markov_algo)
+ (modules parser lexer production model)
+ (libraries str))

@@ -1,0 +1,6 @@
+(ocamllex lexer)
+(menhir (modules parser))
+
+(library
+ (name instruction_turing)
+ (modules parser lexer instruction model))

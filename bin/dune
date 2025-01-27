@@ -1,0 +1,4 @@
+(executable
+ (public_name computation)
+ (name main)
+ (libraries instruction_turing table_turing markov_algo register_machine general_recursive))

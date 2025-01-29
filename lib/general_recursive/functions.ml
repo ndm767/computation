@@ -12,7 +12,7 @@ type function_body =
   | Word of word
   | Call of ident * function_body list
   | Recursion of function_body * function_body
-  | Minimization of ident * function_body * word
+  | Minimization of ident * function_body * function_body 
 
 let process_symbol symb = String.sub symb 1 (String.length symb - 1)
 
@@ -36,8 +36,8 @@ let rec string_of_func_body body =
       ^ ")"
   | Recursion (base, ind) ->
       string_of_func_body base ^ " | " ^ string_of_func_body ind
-  | Minimization (v, b, w) ->
-      "min_" ^ v ^ "[" ^ string_of_func_body b ^ " = " ^ w ^ "]"
+  | Minimization (v, b, f2) ->
+      "min_" ^ v ^ "[" ^ string_of_func_body b ^ " = " ^ string_of_func_body f2 ^ "]"
 
 type func = { name : ident; args : arg list; body : function_body }
 

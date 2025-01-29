@@ -55,6 +55,10 @@ id_or_body:
     | def_body { $1 }
     | IDENTIFIER { Functions.Ident $1 }
 ;
+id_word_or_body:
+    | id_or_body { $1 }
+    | WORD { Word $1 }
+;
 def_arg_list: 
     | separated_nonempty_list(COMMA, def_arg) { $1 }
 ;
@@ -80,5 +84,5 @@ prim_recursion:
     | base = def_body; OR; ind = def_body { Functions.Recursion (base, ind) } 
 ;
 minimization: 
-    | MIN UNDERSCORE v = IDENTIFIER; OPEN_BRACKET f = def_body; EQUALS w = WORD; CLOSE_BRACKET { Functions.Minimization (v, f, w) }
+    | MIN UNDERSCORE v = IDENTIFIER; OPEN_BRACKET f = def_body; EQUALS f2 = id_word_or_body; CLOSE_BRACKET { Functions.Minimization (v, f, f2) }
 ;
